@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-const connect = mongoose.connect('mongodb://localhost:27017/Login-tut');
+// const connect = mongoose.connect('mongodb://root:example@mongo:27017/');
 
-//check database connected or not
-connect.then(() => {
-    console.log("Database connected successfully");
-}).catch((err) => {
-    console.log("Database connection failed", err);
-});
+// //check database connected or not
+// connect.then(() => {
+//     console.log("Database connected successfully");
+// }).catch((err) => {
+//     console.log("Database connection failed", err);
+// });
 
 // create schema
 const userSchema = new mongoose.Schema({
