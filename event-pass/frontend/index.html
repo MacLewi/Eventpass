@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPass - Discover Amazing Events</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>🎫 EventPass</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="active">Home</a>
+                    <a href="#events">Events</a>
+                    <a href="#" id="loginBtn">Login</a>
+                    <a href="#" id="registerBtn">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="container">
+                <h1>Discover Amazing Events</h1>
+                <p>Find and book tickets for the best events in your city</p>
+            </div>
+        </div>
+
+        <div class="container" id="events">
+            <div class="events-header">
+                <h2>Upcoming Events</h2>
+                <div class="filters">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="technology">Technology</option>
+                        <option value="music">Music</option>
+                        <option value="business">Business</option>
+                        <option value="art">Art</option>
+                        <option value="education">Education</option>
+                        <option value="sports">Sports</option>
+                        <option value="health">Health</option>
+                        <option value="charity">Charity</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search events by name, description, or tags...">
+                </div>
+            </div>
+
+            <div id="eventsContainer" class="events-grid">
+                <div class="loading">Loading events...</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Booking -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Your Ticket</h2>
+            <div id="bookingDetails"></div>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="ticketType">Ticket Type:</label>
+                    <select id="ticketType" required>
+                        <option value="regular">Regular</option>
+                        <option value="vip">VIP</option>
+                        <option value="student">Student</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" min="1" max="10" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 EventPass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

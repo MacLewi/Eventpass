@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const collection = require('./config');
+const cors = require('cors');
 const Event = require('./Event'); // ← Import the Event model correctly
 const mongoose = require('mongoose');
 
@@ -9,7 +10,7 @@ const app = express();
 
 // MongoDB Connection
 
-
+app.use(cors());
 const mongoURI = 'mongodb://root:example@localhost:27017/event-pass?authSource=admin';
 mongoose.connect(mongoURI);
 
@@ -17,10 +18,10 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
     console.log('✅ Database connected successfully');
-    
+
     // Debug: Check Event model collection name
     console.log('Event collection name:', Event.collection.name);
-    
+
     // Debug: Count events directly
     Event.countDocuments({}).then(count => {
         console.log('Event.countDocuments():', count);
