@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Details - Summer Music Festival 2024</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Header / Navigation -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary font-bold text-xl">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span>EventPass</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Main Content -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Hero Image -->
+<div class="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-xl">
+<div class="w-full h-full bg-center bg-cover" alt="Crowd cheering at an outdoor music festival stage at night" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9y8uVr4yeXBuo4FJiCRQEulPHeiFN_hpPCmmxP-xVF-ZbKRpI3GPzRtjE4YSVgox0Mc25W3w1ikuq4_lo_4UYNPgru_o6vG7MJvncaMXwhpvdYogZ4XdEGHMi4__9cTgzlucXWQgtGuo1DUfjr8HpttATXZSMTlIgHpYQjlixOoVtQDFr1vWx2O0_SlMfQsgSRpZhWJMeXtbxTEsEu1eJwM6kULyierNG5NlTV3bIiJHIBlhgMoai5nZxhFlmB6CQdG2hf2_Ry0ju");'>
+</div>
+<div class="absolute top-4 right-4 flex gap-2">
+<button class="bg-white/90 dark:bg-slate-800/90 p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-200">share</span>
+</button>
+<button class="bg-white/90 dark:bg-slate-800/90 p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</button>
+</div>
+</div>
+<!-- Event Heading -->
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-wider">Music Festival</span>
+<span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-xs font-bold uppercase rounded-full tracking-wider">On Sale</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">Summer Music Festival 2024</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">Experience the best live music under the stars with over 20 international artists, gourmet food trucks, and immersive art installations.</p>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-primary/5">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0 w-12 h-12">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white font-bold">Saturday, Oct 12, 2024</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">6:00 PM - 12:00 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-primary/5">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0 w-12 h-12">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white font-bold">Grand Central Park, NY</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">123 West Side Avenue</p>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-4">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">About this event</h3>
+<div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 leading-relaxed">
+<p>Get ready for the most anticipated event of the summer! The Summer Music Festival returns to Grand Central Park for a weekend of pure musical magic. This year's lineup includes headliners from across the globe, bringing together indie, electronic, and pop fans for an unforgettable experience.</p>
+<p>What to expect: 3 massive stages, local food market with over 50 vendors, VIP lounges with panoramic views, and late-night silent disco sessions. Don't miss out on the early bird tickets!</p>
+</div>
+</div>
+<!-- Map Snippet -->
+<div class="space-y-4">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Location</h3>
+<div class="relative w-full h-64 rounded-xl overflow-hidden grayscale contrast-125 border border-primary/10">
+<div class="w-full h-full bg-slate-200 dark:bg-slate-800 bg-center bg-cover" alt="Stylized map showing central park location" data-location="New York City" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7kMxgKxvOjOQ2RIrx7jHFKiL6D2UlxbjjzrGnjAjRdnNbuodA-k8RzQcA4y1c4hxtQk9Zzs17rKfjWpPkqLYOecljvcyIyU8U4iu-5oJxqlThRo7O4mNqyR2hdasljZ9cABW26IkcfW6B5ECu1OwZXOuRuRlDMbsGEQU-ZC0Zu_MzeGp5pD7TMpLZ5NEK9U4rufOyohZM2uJ1nERTXPfYvgGI8v_BwI1NRtZgCLqdgDw0a9dmp2Ysm5eMwVaP3jnc5TUc2MZerYSE");'>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-white p-3 rounded-full shadow-2xl animate-bounce">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-slate-900/95 p-3 rounded-lg flex items-center justify-between shadow-lg">
+<span class="text-sm font-medium">123 West Side Avenue, NY</span>
+<button class="text-primary text-sm font-bold flex items-center gap-1">
+                                Get Directions <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Ticket Card (Sticky) -->
+<div class="lg:col-span-1">
+<div class="sticky top-24 space-y-6">
+<!-- Ticket Selection Card -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-primary/10 shadow-xl overflow-hidden">
+  <div class="p-6 space-y-6">
+
+    <!-- PRICE -->
+    <div class="space-y-2">
+      <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Tickets starting from</p>
+      <div class="flex items-baseline gap-1">
+        <span class="text-3xl font-extrabold text-slate-900 dark:text-white">$89.00</span>
+        <span class="text-slate-500 text-sm">/ person</span>
+      </div>
+    </div>
+
+    <!-- TICKET BOX -->
+    <div class="ticket-box">
+
+      <!-- Ticket Type -->
+      <div class="flex flex-col gap-2">
+        <label for="ticketType" class="text-xs font-bold uppercase text-slate-500 tracking-wider">Ticket Type</label>
+        <select id="ticketType"> class="w-full bg-background-light dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-primary py-3">
+          <option value="89">General Admission - $89.00</option>
+          <option value="189">VIP - $189.00</option>
+          <option value="250">Premium - $250.00</option>
+        </select>
+      </div>
+
+      <!-- Quantity -->
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-bold uppercase text-slate-500 tracking-wider">Quantity</label>
+        <div class="flex items-center justify-between bg-background-light dark:bg-slate-800 rounded-lg p-1">
+
+          <button onclick="updateQuantity(-1)" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white dark:hover:bg-slate-700 transition-colors">
+            <span class="material-symbols-outlined">remove</span>
+          </button>
+
+          <span id="quantity" class="font-bold">2</span>
+
+          <button onclick="updateQuantity(1)" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white dark:hover:bg-slate-700 transition-colors">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+    <button onclick="checkout()" 
+      class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 transition-all flex items-center justify-center gap-2">
+      Select Tickets
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </button>
+
+    <p class="text-center text-xs text-slate-400">No booking fees for early bird orders</p>
+
+  </div>
+
+  <!-- SECURITY -->
+  <div class="bg-primary/5 p-4 border-t border-primary/10 flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center border border-primary/20">
+      <span class="material-symbols-outlined text-primary text-xl">shield</span>
+    </div>
+    <div class="text-xs">
+      <p class="font-bold text-slate-900 dark:text-white">Secure Transaction</p>
+      <p class="text-slate-500">Encrypted checkout process</p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  let quantity = 2;
+
+  function updateQuantity(change) {
+    quantity = Math.max(1, quantity + change);
+    document.getElementById("quantity").textContent = quantity;
+  }
+
+  function checkout() {
+    const ticketType = document.getElementById("ticketType");
+    const price = parseFloat(ticketType.value);
+    const selectedText = ticketType.options[ticketType.selectedIndex].text;
+
+    const total = price * quantity;
+
+    // Show summary
+    alert(`You selected ${quantity} ticket(s) of ${selectedText}. Total: $${total.toFixed(2)}`);
+
+    // Redirect to checkout page with data
+    window.location.href = `Checkout-flow.html?qty=${quantity}&price=${price}`;
+  }
+</script>
+<!-- Organizer Info -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-primary/10 p-6 space-y-4">
+<h4 class="text-sm font-bold text-slate-500 uppercase tracking-widest">Organized by</h4>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border-2 border-primary/10">
+<img class="w-full h-full object-cover" alt="Professional profile photo of the organizer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ILyw41i9uy30loh4jempWhWOotriypCCHwTARwC51nzE8VU9AOrIH20t8SsaNlbnyof1PDkOd3JDxTuaZjlw12PiUGFfavX0kwgAe0Vwsoot7tpkfHAXCSHiNX4QbBasXz3YXYiXOi8JudjcbCyMoxAyeZ6DS5WDZ6g-sepPBW5h40uYGrLpxTz7vZa-F235zQBTsJ3-z8Skq19iClmEVRIcAoRFaQfxysbPR0lWu-CScPq3YiBPJYfBjixtcITWdnaPayHb0Cyd"/>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">Lumina Events Co.</p>
+<div class="flex gap-2 mt-1">
+<span class="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full">Top Rated</span>
+<span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded-full">Verified</span>
+</div>
+</div>
+</div>
+<button class="w-full border border-primary/20 hover:bg-primary/5 text-primary text-sm font-bold py-2 rounded-lg transition-colors">
+                            Contact Organizer
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Sticky Footer Action -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-t border-primary/10 z-[60] flex items-center justify-between gap-4">
+<div>
+<p class="text-xs text-slate-500 font-bold uppercase">From</p>
+<p class="text-xl font-extrabold text-slate-900 dark:text-white">$89.00</p>
+</div>
+<button class="flex-1 max-w-[200px] bg-primary text-white font-bold py-3 rounded-xl shadow-lg shadow-primary/20">
+            Get Tickets
+        </button>
+</div>
+</body></html>

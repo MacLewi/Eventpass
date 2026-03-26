@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Event Ticketing Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+margin:0;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#222;
+color:white;
+}
+
+header button{
+background:#ff4d4d;
+border:none;
+padding:8px 15px;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+header button:hover{
+background:#cc0000;
+}
+
+h2{
+text-align:center;
+margin-top:20px;
+}
+
+#events{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card h3{
+margin-top:0;
+}
+
+.card button{
+background:#007BFF;
+color:white;
+border:none;
+padding:10px;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.card button:hover{
+background:#0056b3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>Event Ticketing Dashboard</h2>
+
+<button onclick="logout()">Logout</button>
+
+</header>
+
+<h2>Available Events</h2>
+
+<div id="events"></div>
+
+<script>
+
+async function loadEvents(){
+
+try{
+
+const res = await fetch("/api/events")
+
+const events = await res.json()
+
+const container = document.getElementById("events")
+
+container.innerHTML=""
+
+events.forEach(event => {
+
+container.innerHTML += `
+<div class="card">
+
+<h3>${event.title}</h3>
+
+<p><strong>Date:</strong> ${event.date}</p>
+
+<p><strong>Location:</strong> ${event.location}</p>
+
+<p><strong>Price:</strong> KES ${event.price}</p>
+
+<button onclick="payForTicket('${event._id}',${event.price})">
+Buy Ticket
+</button>
+
+</div>
+`
+
+})
+
+}catch(err){
+
+console.log(err)
+
+}
+
+}
+
+
+
+async function payForTicket(eventId,price){
+
+const phone = prompt("Enter your M-Pesa phone number (e.g 254712345678)")
+
+if(!phone){
+alert("Phone number required")
+return
+}
+
+try{
+
+const res = await fetch("/api/payment/stkpush",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+phone:phone,
+amount:price,
+eventId:eventId
+
+})
+
+})
+
+const data = await res.json()
+
+console.log(data)
+
+alert("Payment request sent to your phone. Enter your M-Pesa PIN to complete payment.")
+
+}catch(err){
+
+console.log(err)
+
+alert("Payment failed")
+
+}
+
+}
+
+
+
+function logout(){
+
+localStorage.removeItem("user")
+
+window.location.href="login.html"
+
+}
+
+
+
+loadEvents()
+
+</script>
+
+</body>
+
+</html>

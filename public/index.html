@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Ticketing System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Available Events</h1>
+
+<div id="events"></div>
+
+<script>
+
+fetch("/api/events")
+.then(res=>res.json())
+.then(data=>{
+
+let container = document.getElementById("events")
+
+data.forEach(event=>{
+
+container.innerHTML += `
+<div class="card">
+<h2>${event.title}</h2>
+<p>Date: ${event.date}</p>
+<p>Location: ${event.location}</p>
+<p>Price: KES ${event.price}</p>
+<button>Book Ticket</button>
+</div>
+`
+
+})
+
+})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Checkout - EventPass</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: Arial, sans-serif; }
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+<div class="max-w-4xl mx-auto p-6">
+
+  <h1 class="text-2xl font-bold mb-6">Checkout</h1>
+
+  <!-- ORDER SUMMARY -->
+  <div class="bg-white p-6 rounded-lg shadow mb-6">
+    <h2 class="font-bold mb-4">Order Summary</h2>
+    <p id="ticketInfo"></p>
+    <p id="totalPrice" class="font-bold text-lg mt-2"></p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="bg-white p-6 rounded-lg shadow mb-6">
+    <h2 class="font-bold mb-4">Contact Information</h2>
+
+    <input class="w-full border p-3 mb-3 rounded" placeholder="Full Name">
+    <input class="w-full border p-3 rounded" placeholder="Email">
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="bg-white p-6 rounded-lg shadow mb-6">
+    <h2 class="font-bold mb-4">Payment Method</h2>
+
+    <!-- OPTIONS -->
+    <div class="space-y-3">
+      <label class="block">
+        <input type="radio" name="payment" value="card" checked onclick="switchPayment('card')"> Card Payment
+      </label>
+
+      <label class="block">
+        <input type="radio" name="payment" value="mpesa" onclick="switchPayment('mpesa')"> M-Pesa (STK Push)
+      </label>
+    </div>
+
+    <!-- CARD FORM -->
+    <div id="cardForm" class="mt-4">
+      <input class="w-full border p-3 mb-3 rounded" placeholder="Card Number">
+      <div class="flex gap-3">
+        <input class="w-1/2 border p-3 rounded" placeholder="MM/YY">
+        <input class="w-1/2 border p-3 rounded" placeholder="CVV">
+      </div>
+    </div>
+
+    <!-- MPESA FORM -->
+    <div id="mpesaForm" class="mt-4 hidden">
+      <input id="phone" class="w-full border p-3 rounded" placeholder="Enter phone (07XXXXXXXX)">
+    </div>
+
+  </div>
+
+  <!-- BUTTON -->
+  <button onclick="completePurchase()" 
+    class="w-full bg-blue-600 text-white py-4 rounded-lg font-bold hover:bg-blue-700">
+    Complete Purchase
+  </button>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+  let selectedMethod = "card";
+
+  // LOAD DATA FROM PREVIOUS PAGE
+  const ticketName = localStorage.getItem("ticketName");
+  const quantity = localStorage.getItem("quantity");
+  const total = localStorage.getItem("total");
+
+  document.getElementById("ticketInfo").textContent =
+    `${quantity} x ${ticketName}`;
+
+  document.getElementById("totalPrice").textContent =
+    `Total: $${parseFloat(total || 0).toFixed(2)}`;
+
+  function switchPayment(method) {
+    selectedMethod = method;
+
+    document.getElementById("cardForm").style.display =
+      method === "card" ? "block" : "none";
+
+    document.getElementById("mpesaForm").style.display =
+      method === "mpesa" ? "block" : "none";
+  }
+
+  function completePurchase() {
+
+    if (selectedMethod === "card") {
+      alert("✅ Payment Successful via Card!\nTotal: $" + total);
+      window.location.href = "confirmation.html";
+    }
+
+    if (selectedMethod === "mpesa") {
+      const phone = document.getElementById("phone").value;
+
+      if (!phone || phone.length < 10) {
+        alert("❌ Enter valid phone number");
+        return;
+      }
+
+      alert("📲 STK Push sent to " + phone);
+
+      setTimeout(() => {
+        alert("✅ Payment Successful via M-Pesa!");
+        window.location.href = "confirmation.html";
+      }, 4000);
+    }
+  }
+</script>
+
+</body>
+</html>
